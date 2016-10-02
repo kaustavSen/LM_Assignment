@@ -13,3 +13,7 @@ model_full <- lm(LungCap ~ ., data = lung_data)
 
 #Stepwise Regression
 step(model_init, scope = list(upper = model_full), direction = "both")
+
+#Computing Residual Sum of Squares
+sum(model_init$residuals^2) #Residual Sum of Squares of initial model
+sum(model_full$residuals^2) #Residual Sum of Squares of full model
